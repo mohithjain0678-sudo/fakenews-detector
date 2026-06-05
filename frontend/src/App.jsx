@@ -16,12 +16,12 @@ export default function App() {
 
     try {
       if (inputType === "url") {
-        const res = await axios.post("http://localhost:8000/analyze/text", { url })
+        const res = await axios.post("https://fakenews-detector-h4lw.onrender.com/analyze/text", { url })
         setResult(res.data)
       } else {
         const formData = new FormData()
         formData.append("file", image)
-        const res = await axios.post("http://localhost:8000/analyze/image", formData)
+        const res = await axios.post("https://fakenews-detector-h4lw.onrender.com/analyze/image", formData)
         setResult(res.data)
       }
     } catch (err) {
